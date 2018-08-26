@@ -11,7 +11,12 @@ namespace Minesweeper
         public ClosedTile(Tile baseComponent) : base(baseComponent)
         {
 
-        }        
+        }
+
+        public override bool IsOpened()
+        {
+            return false;
+        }
 
         public override Tile Open()
         {

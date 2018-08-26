@@ -13,12 +13,17 @@ namespace Minesweeper
             return true;
         }
 
-        public override int GetAdjacentMines()
+        public override bool IsOpened()
         {
             throw new NotImplementedException();
         }
 
-        public override void SetAdjacentMines(int adjacentMines)
+        public override int GetAdjacentMinesCount()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SetAdjacentMinesCount(int adjacentMinesCount)
         {
             throw new NotImplementedException();
         }
