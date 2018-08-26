@@ -21,8 +21,9 @@ namespace Minesweeper
             List<List<Tile>> tiles = InitializeTiles(width, height);
             PlaceMines(tiles, mines);
             FillGridWithEmptyTiles(tiles);
+            SetAdjacentMinesNumbers(tiles);
             return new Grid(tiles);
-        }
+        }        
 
         private static List<List<Tile>> InitializeTiles(int width, int height)
         {
@@ -71,9 +72,45 @@ namespace Minesweeper
             }
         }
 
-        private static void SetAdjacentMines()
+        private static void SetAdjacentMinesNumbers(List<List<Tile>> tiles)
         {
+            for (int x = 0; x < tiles.Count; x += 1)
+            {
+                for (int y = 0; y < tiles[0].Count; y += 1)
+                {
+                    int adjacentMines = GetNumberOfAdjacentMines(tiles, x, y);
+                    tiles[x][y].SetAdjacentMines(adjacentMines);
+                }
+            }            
+        }
 
-        }     
+        private static int GetNumberOfAdjacentMines(List<List<Tile>> tiles, int x, int y)
+        {
+            int adjacentMines = 0;
+            List<NeighbourCoordinate> coordinates = NeighbourCoordinate.GetNeighbourCoordinates();
+
+            foreach (NeighbourCoordinate coordinate in coordinates)
+            {
+                if (CheckIfAdjacentTileIsBomb(tiles, x + coordinate.X, y + coordinate.Y))
+                {
+                    adjacentMines++;
+                }
+            }
+            return adjacentMines;
+        }
+
+        private static bool CheckIfAdjacentTileIsBomb(List<List<Tile>> tiles, int x, int y)
+        {
+            if (x >= 0 && x < tiles.Count && y >= 0 && y < tiles[0].Count)
+            {
+                return tiles[x][y].IsBomb();
+            }
+            return false;
+        }
+
+        public Tile GetTile(int x, int y)
+        {
+            return tiles[x][y];
+        }
     }
 }

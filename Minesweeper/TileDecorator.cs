@@ -20,5 +20,15 @@ namespace Minesweeper
             return tile.IsBomb();
         }
 
+        public override int GetAdjacentMines()
+        {
+            return tile.GetAdjacentMines();
+        }
+
+        public override void SetAdjacentMines(int adjacentMines)
+        {
+            tile.SetAdjacentMines(adjacentMines);
+        }
+
     }
 }

@@ -10,7 +10,7 @@ namespace Minesweeper
     {
         public abstract bool IsBomb();
         public abstract int GetAdjacentMines();
-        public abstract int SetAdjacentMines(int adjacentMines);
+        public abstract void SetAdjacentMines(int adjacentMines);
         public abstract Tile Open();
         public abstract Tile Flag();
     }

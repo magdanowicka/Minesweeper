@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="ClosedTile.cs" />
     <Compile Include="Grid.cs" />
+    <Compile Include="NeighbourCoordinate.cs" />
     <Compile Include="TileDecorator.cs" />
     <Compile Include="EmptyTile.cs" />
     <Compile Include="FlaggedTile.cs" />

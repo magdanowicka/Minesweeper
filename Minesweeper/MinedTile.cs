@@ -18,7 +18,7 @@ namespace Minesweeper
             throw new NotImplementedException();
         }
 
-        public override int SetAdjacentMines(int adjacentMines)
+        public override void SetAdjacentMines(int adjacentMines)
         {
             throw new NotImplementedException();
         }

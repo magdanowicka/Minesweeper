@@ -11,7 +11,7 @@ namespace Minesweeper
         public ClosedTile(Tile baseComponent) : base(baseComponent)
         {
 
-        }
+        }        
 
         public override Tile Open()
         {
@@ -21,6 +21,6 @@ namespace Minesweeper
         public override Tile Flag()
         {
             return new FlaggedTile(this);
-        }
+        }        
     }
 }

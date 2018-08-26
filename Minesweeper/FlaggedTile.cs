@@ -12,7 +12,7 @@ namespace Minesweeper
         {
 
         }
-
+        
         public override Tile Open()
         {
             return this;

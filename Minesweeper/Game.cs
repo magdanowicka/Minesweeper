@@ -18,12 +18,12 @@ namespace Minesweeper
         
         public void PrimaryMove(int x, int y)
         {
-            Grid[x, y].Open();
+            Grid.GetTile(x, y).Open();
         }
 
         public void SecondaryMove(int x, int y)
         {
-            Grid[x, y].Flag();
+            Grid.GetTile(x, y).Flag();
         }
     }
 }

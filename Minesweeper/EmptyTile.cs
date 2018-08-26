@@ -8,6 +8,8 @@ namespace Minesweeper
 {
     public class EmptyTile : Tile
     {
+        private static int numberOfAdjacentMines;
+
         public override bool IsBomb()
         {
             return false;
@@ -15,12 +17,12 @@ namespace Minesweeper
 
         public override int GetAdjacentMines()
         {
-            throw new NotImplementedException();
+            return numberOfAdjacentMines;
         }
 
-        public override int SetAdjacentMines(int adjacentMines)
+        public override void SetAdjacentMines(int adjacentMines)
         {
-            
+            numberOfAdjacentMines = adjacentMines;
         }
 
         public override Tile Open()

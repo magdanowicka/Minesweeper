@@ -11,7 +11,7 @@ namespace Minesweeper
         public OpenedTile(Tile baseComponent) : base(baseComponent)
         {
 
-        }
+        }        
 
         public override Tile Open()
         {
